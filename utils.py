@@ -31,8 +31,8 @@ class PageRank(MessagePassing):
 
         return x
 
-def message(self, x_j, norm):
-    return norm.view(-1, 1) * x_j
+    def message(self, x_j, norm):
+        return norm.view(-1, 1) * x_j
 
 
 def evaluate(data, model):
